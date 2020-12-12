@@ -1,0 +1,7 @@
+{
+  "name": "phrbase",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

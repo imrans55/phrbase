@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      
+      <ion-back-button [routerLink]="['/tabs/extra']" text="" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Medicine Notify</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button color="dark" expand="block" (click)="clearAll()">Disable</ion-button>   
+  <ion-button color="dark" expand="block" (click)="recurringNotification()">Remainder every 12 hours</ion-button>  
+  <ion-button color="dark" expand="block" (click)="repeatingDaily()">Daily</ion-button>  
+ 
+
+  <ion-list>
+    <ion-item *ngFor="let n of scheduled">
+      <ion-label text-wrap>
+        {{ n.id }} - {{ n.title}}
+        <p>Trigger: {{ n.trigger | json }}</p>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+  
+
+</ion-content>
